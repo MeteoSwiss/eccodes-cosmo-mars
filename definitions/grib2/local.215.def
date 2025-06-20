@@ -14,6 +14,11 @@ concept marsStream(unknown) {
     enda = {
       typeOfGeneratingProcess = 0;
       backgroundProcess = 2;}
+    # fg
+    enda = {
+      typeOfGeneratingProcess = 2;
+      backgroundProcess = 0;
+    }
     # ... analysis increment (to be defined)
     # ... initialized analysis (to be defined)
     # ... first guess det (to be defined)
@@ -39,6 +44,16 @@ concept marsType(unknown) {
     #     (discipline, parameterCategory, parameterNumber), and chemical constituent
     det = {
       productDefinitionTemplateNumber = 42;}
+    
+    an = {
+      typeOfGeneratingProcess = 0;
+      backgroundProcess = 2;
+    }
+    ia = {
+      typeOfGeneratingProcess = 2;
+      backgroundProcess = 0;
+    }
+    
     # ensemble forecast or assimilation product, perturbed or control member 
     # (a new type could be used for each productDefinitionTemplateNumber)
     # ... instantaneous value
