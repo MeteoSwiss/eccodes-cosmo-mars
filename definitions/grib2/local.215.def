@@ -42,24 +42,44 @@ concept marsType(unknown) {
     # ensemble forecast or assimilation product, perturbed or control member 
     # (a new type could be used for each productDefinitionTemplateNumber)
     # ... instantaneous value
-    ememb = {
-      productDefinitionTemplateNumber = 1;}
+    cf = {
+      productDefinitionTemplateNumber = 1;
+      perturbationNumber = 0; }
+    pf = {
+      productDefinitionTemplateNumber = 1;
+    }
     # ... instantaneous value, chemical constituent
-    ememb = {
-      productDefinitionTemplateNumber = 41;}
+    cf = {
+      productDefinitionTemplateNumber = 41;
+      perturbationNumber = 0; 
+    }
+    pf = {
+      productDefinitionTemplateNumber = 41;
+    }
     # ... temporal accumulation
-    ememb = {
-      productDefinitionTemplateNumber = 11;}
+    cf = {
+      productDefinitionTemplateNumber = 11;
+      perturbationNumber = 0; 
+    }
+    pf = {
+      productDefinitionTemplateNumber = 11;
+    }
     # ... temporal accumulation, chemical constituent
-    ememb = {
-      productDefinitionTemplateNumber = 43;}
+    cf = {
+      productDefinitionTemplateNumber = 43;
+      perturbationNumber = 0; 
+    }
+    pf = {
+      productDefinitionTemplateNumber = 43;
+    }
     # derived forecast
     # ... instantaneous value, unweighted ensemble mean
-    emean = {
+    em = {
       productDefinitionTemplateNumber = 2;
       derivedForecast = 0;}
+
     # ... instantaneous value, unweighted ensemble standard deviation
-    estdv = {
+    es = {
       productDefinitionTemplateNumber = 2;
       derivedForecast = 4;}
 } : no_copy;
