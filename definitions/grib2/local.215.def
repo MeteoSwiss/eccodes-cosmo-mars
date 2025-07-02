@@ -49,7 +49,7 @@ concept marsType(unknown) {
       typeOfGeneratingProcess = 0;
       backgroundProcess = 2;
     }
-    ia = {
+    fg = {
       typeOfGeneratingProcess = 2;
       backgroundProcess = 0;
     }
