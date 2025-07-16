@@ -20,7 +20,8 @@
 'ml'   = {typeOfFirstFixedSurface=105; typeOfSecondFixedSurface=105;}
 # depthBelowLand
 'dp'  = {typeOfFirstFixedSurface=106; typeOfSecondFixedSurface=255;}
-'sfc'  = {typeOfFirstFixedSurface=106;typeOfSecondFixedSurface=106;}
+# depthBelowLandLayer
+'dp'  = {typeOfFirstFixedSurface=106;typeOfSecondFixedSurface=106;}
 'pt'   = {typeOfFirstFixedSurface=107; typeOfSecondFixedSurface=255;}
 'pt'   = {typeOfFirstFixedSurface=107; typeOfSecondFixedSurface=107;}
 'pv'   = {typeOfFirstFixedSurface=109; typeOfSecondFixedSurface=255;}
