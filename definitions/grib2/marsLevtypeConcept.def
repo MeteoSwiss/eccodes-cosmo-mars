@@ -95,7 +95,8 @@
 'sfc' = {typeOfFirstFixedSurface=10;   typeOfSecondFixedSurface=255;}
 #echoTopInDBZ
 'sfc' = {typeOfFirstFixedSurface=25;   typeOfSecondFixedSurface=255;}
-'sfc'  = {typeOfFirstFixedSurface=102; typeOfSecondFixedSurface=102;}
+# WSHEAR_DIFF_
+'hl'  = {typeOfFirstFixedSurface=102; typeOfSecondFixedSurface=102;}
 'sfc' = {typeOfFirstFixedSurface=208;   typeOfSecondFixedSurface=208;}
 'sfc' = {typeOfFirstFixedSurface=194;   typeOfSecondFixedSurface=192;}
 'sfc'  = {typeOfFirstFixedSurface=208; typeOfSecondFixedSurface=255;}
