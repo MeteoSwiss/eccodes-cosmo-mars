@@ -18,8 +18,10 @@
 'sfc'  = {typeOfFirstFixedSurface=103; typeOfSecondFixedSurface=103;}
 'ml'   = {typeOfFirstFixedSurface=105; typeOfSecondFixedSurface=255;}
 'ml'   = {typeOfFirstFixedSurface=105; typeOfSecondFixedSurface=105;}
-'sfc'  = {typeOfFirstFixedSurface=106; typeOfSecondFixedSurface=255;}
-'sfc'  = {typeOfFirstFixedSurface=106;typeOfSecondFixedSurface=106;}
+# depthBelowLand
+'dp'  = {typeOfFirstFixedSurface=106; typeOfSecondFixedSurface=255;}
+# depthBelowLandLayer
+'dp'  = {typeOfFirstFixedSurface=106;typeOfSecondFixedSurface=106;}
 'pt'   = {typeOfFirstFixedSurface=107; typeOfSecondFixedSurface=255;}
 'pt'   = {typeOfFirstFixedSurface=107; typeOfSecondFixedSurface=107;}
 'pv'   = {typeOfFirstFixedSurface=109; typeOfSecondFixedSurface=255;}
@@ -95,7 +97,10 @@
 'sfc' = {typeOfFirstFixedSurface=10;   typeOfSecondFixedSurface=255;}
 #echoTopInDBZ
 'sfc' = {typeOfFirstFixedSurface=25;   typeOfSecondFixedSurface=255;}
-
-
-
-
+# WSHEAR_DIFF_
+'hl'  = {typeOfFirstFixedSurface=102; typeOfSecondFixedSurface=102;}
+'sfc' = {typeOfFirstFixedSurface=208;   typeOfSecondFixedSurface=208;}
+# needed by ASWDIFU_S_OS, ... 
+'sfc'  = {typeOfFirstFixedSurface=208; typeOfSecondFixedSurface=255;}
+# HHL
+'ml'  = {typeOfFirstFixedSurface=7; typeOfSecondFixedSurface=101;}
