@@ -101,6 +101,7 @@
 'hl'  = {typeOfFirstFixedSurface=102; typeOfSecondFixedSurface=102;}
 'sfc' = {typeOfFirstFixedSurface=208;   typeOfSecondFixedSurface=208;}
 'sfc' = {typeOfFirstFixedSurface=194;   typeOfSecondFixedSurface=192;}
+# needed by ASWDIFU_S_OS, ... 
 'sfc'  = {typeOfFirstFixedSurface=208; typeOfSecondFixedSurface=255;}
 # HHL
 'ml'  = {typeOfFirstFixedSurface=7; typeOfSecondFixedSurface=101;}
