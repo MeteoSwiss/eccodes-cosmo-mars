@@ -45,7 +45,7 @@ concept marsStream(unknown) {
       generatingProcessIdentifier = 142;
     }
     
-    rean-l = {
+    reanl = {
       generatingProcessIdentifier = 170;
     }
 
@@ -154,7 +154,7 @@ concept marsModel(unknown) {
       generatingProcessIdentifier = 142;}
     'KENDA-CH1' = {
       generatingProcessIdentifier = 151;}
-    'ICON' = {
+    'ICON-REA-L-CH1' = {
       generatingProcessIdentifier = 170;}
 } : no_copy;
 
