@@ -6,7 +6,20 @@ include "grib2/local.78.def"
 #------------------------------------------------------------------------------------
 # class
 # ... operational data
-constant marsClass='od';
+concept marsClass(unknown) {
+  'od' = {
+    generatingProcessIdentifier = 141;
+  }
+  'od' = {
+    generatingProcessIdentifier = 142;
+  }
+  'od' = {
+    generatingProcessIdentifier = 151;
+  }
+  'rd' = {
+    generatingProcessIdentifier = 170;
+  }
+} : no_copy;
 
 concept marsStream(unknown) {
     # Ensemble data assimilation system
@@ -24,7 +37,18 @@ concept marsStream(unknown) {
     # ... first guess det (to be defined)
     # ensemble forecast
     enfo = {
-      typeOfGeneratingProcess = 4;}
+      typeOfGeneratingProcess = 4;
+      generatingProcessIdentifier = 141;
+    }
+    enfo = {
+      typeOfGeneratingProcess = 4;
+      generatingProcessIdentifier = 142;
+    }
+    
+    reanl = {
+      generatingProcessIdentifier = 170;
+    }
+
 } : no_copy;
 
 concept marsType(unknown) {
@@ -130,9 +154,38 @@ concept marsModel(unknown) {
       generatingProcessIdentifier = 142;}
     'KENDA-CH1' = {
       generatingProcessIdentifier = 151;}
+    'ICON-REA-L-CH1' = {
+      generatingProcessIdentifier = 170;}
 } : no_copy;
 
-constant marsExpver = '0001';
+
+concept marsExpver(unknown) {
+  "r001" = {
+      generatingProcessIdentifier = 170;
+      localNumberOfExperiment = 777;
+  }
+  "r001" = {
+      generatingProcessIdentifier = 170;
+      localNumberOfExperiment = 778;
+  }
+  "r001" = {
+      generatingProcessIdentifier = 170;
+      localNumberOfExperiment = 779;
+  }
+  "r001" = {
+      generatingProcessIdentifier = 170;
+      localNumberOfExperiment = 780;
+  }
+  "0001" = {
+      generatingProcessIdentifier = 141;
+  }
+  "0001" = {
+      generatingProcessIdentifier = 142;
+  }
+  "0001" = {
+      generatingProcessIdentifier = 151;
+  }
+} : no_copy;
 
 alias mars.class = marsClass;
 alias mars.stream = marsStream;
