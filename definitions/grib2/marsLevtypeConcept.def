@@ -63,9 +63,9 @@
 #isobaricLayer
 'pl'   = {typeOfFirstFixedSurface=100; typeOfSecondFixedSurface=1;}
 #atmML
-'ml'   = {typeOfFirstFixedSurface=192; typeOfSecondFixedSurface=255;} 
+'sfc'   = {typeOfFirstFixedSurface=192; typeOfSecondFixedSurface=255;} 
 #atmMU
-'ml'   = {typeOfFirstFixedSurface=193; typeOfSecondFixedSurface=255;} 
+'sfc'   = {typeOfFirstFixedSurface=193; typeOfSecondFixedSurface=255;} 
 #thermocline
 'ml'   = {typeOfFirstFixedSurface=166; typeOfSecondFixedSurface=162;} 
 #cloudBase
