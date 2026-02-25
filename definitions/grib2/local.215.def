@@ -156,6 +156,8 @@ concept marsModel(unknown) {
       generatingProcessIdentifier = 151;}
     'ICON-REA-L-CH1' = {
       generatingProcessIdentifier = 170;}
+    'VARDA-SINGLE' = {
+      generatingProcessIdentifier = 180;}
 } : no_copy;
 
 
@@ -184,6 +186,9 @@ concept marsExpver(unknown) {
   }
   "0001" = {
       generatingProcessIdentifier = 151;
+  }
+  "0001" = {
+      generatingProcessIdentifier = 180;
   }
 } : no_copy;
 
