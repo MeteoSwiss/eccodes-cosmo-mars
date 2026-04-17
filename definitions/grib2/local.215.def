@@ -48,6 +48,22 @@ concept marsStream(unknown) {
     reanl = {
       generatingProcessIdentifier = 170;
     }
+    
+    aggr03h = {
+      productDefinitionTemplateNumber = 10;
+      lengthOfTimeRange = 180;
+      indicatorOfUnitForTimeRange = 0; 
+    }
+    aggr06h = {
+      productDefinitionTemplateNumber = 10;
+      lengthOfTimeRange = 360;
+      indicatorOfUnitForTimeRange = 0;
+    }
+    aggr12h = {
+      productDefinitionTemplateNumber = 10;
+      lengthOfTimeRange = 720;
+      indicatorOfUnitForTimeRange = 0;
+    }
 
 } : no_copy;
 
@@ -121,6 +137,13 @@ concept marsType(unknown) {
     es = {
       productDefinitionTemplateNumber = 2;
       derivedForecast = 4;}
+    # ensemble estatistics
+    est = {
+      productDefinitionTemplateNumber = 6;
+    }
+    est = {
+      productDefinitionTemplateNumber = 10;
+    }
 } : no_copy;
 
 concept marsModel(unknown) {
