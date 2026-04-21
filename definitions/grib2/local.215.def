@@ -36,48 +36,6 @@ concept marsStream(unknown) {
     # ... initialized analysis (to be defined)
     # ... first guess det (to be defined)
     # ensemble forecast
-    enfo_agg03h = {
-      typeOfGeneratingProcess = 4;
-      generatingProcessIdentifier = 141;
-      productDefinitionTemplateNumber = 10;
-      lengthOfTimeRange = 180;
-      indicatorOfUnitForTimeRange = 0; 
-    }
-    enfo_agg03h = {
-      typeOfGeneratingProcess = 4;
-      generatingProcessIdentifier = 142;
-      productDefinitionTemplateNumber = 10;
-      lengthOfTimeRange = 180;
-      indicatorOfUnitForTimeRange = 0; 
-    }
-    enfo_agg06h = {
-      typeOfGeneratingProcess = 4;
-      generatingProcessIdentifier = 141;
-      productDefinitionTemplateNumber = 10;
-      lengthOfTimeRange = 360;
-      indicatorOfUnitForTimeRange = 0;
-    }
-    enfo_agg06h = {
-      typeOfGeneratingProcess = 4;
-      generatingProcessIdentifier = 142;
-      productDefinitionTemplateNumber = 10;
-      lengthOfTimeRange = 360;
-      indicatorOfUnitForTimeRange = 0;
-    }
-    enfo_agg12h = {
-      typeOfGeneratingProcess = 4;
-      generatingProcessIdentifier = 141;
-      productDefinitionTemplateNumber = 10;
-      lengthOfTimeRange = 720;
-      indicatorOfUnitForTimeRange = 0;
-    }
-    enfo_agg12h = {
-      typeOfGeneratingProcess = 4;
-      generatingProcessIdentifier = 142;
-      productDefinitionTemplateNumber = 10;
-      lengthOfTimeRange = 720;
-      indicatorOfUnitForTimeRange = 0;
-    }
     enfo = {
       typeOfGeneratingProcess = 4;
       generatingProcessIdentifier = 141;
