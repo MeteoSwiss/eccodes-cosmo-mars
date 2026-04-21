@@ -3,13 +3,9 @@
 # (https://github.com/ecmwf/eccodes/blob/develop/definitions/grib2/timespanConcept.def)
 #
 # Concept evaluation: * the rule with the most matching conditions wins
-#                     * for equal score, the first rule wins
+#                     * for equal score, the first rule in the file wins
 #
 
-
-# step 0: lengthOfTimeRange=0 -> 'none'?
-'none' = {typeOfStatisticalProcessing=0;  forecastTime=0; indicatorOfUnitForTimeRange=0; lengthOfTimeRange=0;}
-'none' = {typeOfStatisticalProcessing=11; forecastTime=0; indicatorOfUnitForTimeRange=0; lengthOfTimeRange=0;}
 
 # mean (typeOfStatisticalProcessing=0), since start:
 'fromstart' = {typeOfStatisticalProcessing=0; forecastTime=0;
