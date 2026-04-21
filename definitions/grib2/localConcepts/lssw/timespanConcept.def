@@ -9,7 +9,7 @@
 
 # mean (typeOfStatisticalProcessing=0), since start:
 'fromstart' = {typeOfStatisticalProcessing=0; forecastTime=0;
-               true=is_one_of(paramId, 500078, 500080, 500086, 500087, 500088, 500089, 500480, 500481, 500482, 503135, 503174, 503307, 503601);}
+               true=is_one_of(paramId, 500078, 500080, 500086, 500087, 500088, 500089, 500480, 500481, 500482, 503135, 503174, 503307, 503601, 503750, 503752, 503756);}
 
 # summation (typeOfStatisticalProcessing=11), since start:
 'fromstart' = {typeOfStatisticalProcessing=11; forecastTime=0; paramId=503167;}
