@@ -13,3 +13,9 @@
 
 # summation (typeOfStatisticalProcessing=11), since start:
 'fromstart' = {typeOfStatisticalProcessing=11; forecastTime=0; paramId=503167;}
+
+
+# also determine longer time spans based on minutes
+'3h'  = {indicatorOfUnitForTimeRange=0; lengthOfTimeRange = 180;}
+'6h'  = {indicatorOfUnitForTimeRange=0; lengthOfTimeRange = 360;}
+'12h' = {indicatorOfUnitForTimeRange=0; lengthOfTimeRange = 720;}
