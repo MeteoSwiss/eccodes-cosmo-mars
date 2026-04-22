@@ -1,0 +1,18 @@
+# mean (typeOfStatisticalProcessing=0), since start:
+'fromstart' = {typeOfStatisticalProcessing=0; forecastTime=0;
+               true=is_one_of(paramId, 500078, 500080, 500086, 500087, 500088, 500089, 500480, 500481, 500482, 503135, 503174, 503307, 503601, 503750, 503752, 503756);}
+
+# summation (typeOfStatisticalProcessing=11), since start:
+'fromstart' = {typeOfStatisticalProcessing=11; forecastTime=0; paramId=503167;}
+
+'none'   = {indicatorOfUnitForTimeRange=0; lengthOfTimeRange = 0;}
+'10m'   = {indicatorOfUnitForTimeRange=0; lengthOfTimeRange = 10;}
+'15m'   = {indicatorOfUnitForTimeRange=0; lengthOfTimeRange = 15;}
+'20m'   = {indicatorOfUnitForTimeRange=0; lengthOfTimeRange = 20;}
+'30m'   = {indicatorOfUnitForTimeRange=0; lengthOfTimeRange = 30;}
+'1h'   = {indicatorOfUnitForTimeRange=0; lengthOfTimeRange = 60;}
+'2h'   = {indicatorOfUnitForTimeRange=0; lengthOfTimeRange = 120;}
+'3h'   = {indicatorOfUnitForTimeRange=0; lengthOfTimeRange = 180;}
+'6h'   = {indicatorOfUnitForTimeRange=0; lengthOfTimeRange = 360;}
+'12h'   = {indicatorOfUnitForTimeRange=0; lengthOfTimeRange = 720;}
+
