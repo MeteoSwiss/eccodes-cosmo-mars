@@ -1,18 +1,44 @@
-# mean (typeOfStatisticalProcessing=0), since start:
-'fromstart' = {typeOfStatisticalProcessing=0; forecastTime=0;
-               true=is_one_of(paramId, 500078, 500080, 500086, 500087, 500088, 500089, 500480, 500481, 500482, 503135, 503174, 503307, 503601, 503750, 503752, 503756);}
+## Statistical window concept for MeteoSwiss (lssw)
+# Extension of eccodes/definitions/grib2/timespanConcept.def
+# (https://github.com/ecmwf/eccodes/blob/develop/definitions/grib2/timespanConcept.def)
+#
+# Concept evaluation: * the rule with the most matching conditions wins
+#                     * for equal score, the first rule in the file wins
+#
+
+
+# mean (typeOfStatisticalProcessing=0), since start
+# exclude percentile forecasts (productDefinitionTemplateNumber = 6 & 10) from the '*i1eff<time>_median*' files
+ 'fromstart' = {typeOfStatisticalProcessing=0; forecastTime=0;
+                false=is_one_of(productDefinitionTemplateNumber, 6, 10);
+                true=is_one_of(paramId, 500078, 500080, 500086, 500087, 500088, 500089, 500480, 500481, 500482, 503135, 503174, 503307, 503601, 503750, 503752, 503756);}
 
 # summation (typeOfStatisticalProcessing=11), since start:
-'fromstart' = {typeOfStatisticalProcessing=11; forecastTime=0; paramId=503167;}
+ 'fromstart' = {typeOfStatisticalProcessing=11; forecastTime=0; paramId=503167;}
 
-'none'   = {indicatorOfUnitForTimeRange=0; lengthOfTimeRange = 0;}
-'10m'   = {indicatorOfUnitForTimeRange=0; lengthOfTimeRange = 10;}
-'15m'   = {indicatorOfUnitForTimeRange=0; lengthOfTimeRange = 15;}
-'20m'   = {indicatorOfUnitForTimeRange=0; lengthOfTimeRange = 20;}
-'30m'   = {indicatorOfUnitForTimeRange=0; lengthOfTimeRange = 30;}
-'1h'   = {indicatorOfUnitForTimeRange=0; lengthOfTimeRange = 60;}
-'2h'   = {indicatorOfUnitForTimeRange=0; lengthOfTimeRange = 120;}
-'3h'   = {indicatorOfUnitForTimeRange=0; lengthOfTimeRange = 180;}
-'6h'   = {indicatorOfUnitForTimeRange=0; lengthOfTimeRange = 360;}
-'12h'   = {indicatorOfUnitForTimeRange=0; lengthOfTimeRange = 720;}
+# percentile forecasts (productDefinitionTemplateNumber = 6 & 10) for accumulations (typeOfStatisticalProcessing=1)
+# this matches TOT_PREC & DURSUN in the '*i1eff<time>_median*' files
+# (need 5 conditions to beat the 4 conditions for 'fromstart' from the global concept!)
+ 'none' = {typeOfStatisticalProcessing=1; true=is_one_of(productDefinitionTemplateNumber, 6, 10); indicatorOfUnitForTimeRange=0; lengthOfTimeRange=0  ; true=1;}
+ '10m'  = {typeOfStatisticalProcessing=1; true=is_one_of(productDefinitionTemplateNumber, 6, 10); indicatorOfUnitForTimeRange=0; lengthOfTimeRange=10 ; true=1;}
+ '15m'  = {typeOfStatisticalProcessing=1; true=is_one_of(productDefinitionTemplateNumber, 6, 10); indicatorOfUnitForTimeRange=0; lengthOfTimeRange=15 ; true=1;}
+ '20m'  = {typeOfStatisticalProcessing=1; true=is_one_of(productDefinitionTemplateNumber, 6, 10); indicatorOfUnitForTimeRange=0; lengthOfTimeRange=20 ; true=1;}
+ '30m'  = {typeOfStatisticalProcessing=1; true=is_one_of(productDefinitionTemplateNumber, 6, 10); indicatorOfUnitForTimeRange=0; lengthOfTimeRange=30 ; true=1;}
+ '1h'   = {typeOfStatisticalProcessing=1; true=is_one_of(productDefinitionTemplateNumber, 6, 10); indicatorOfUnitForTimeRange=0; lengthOfTimeRange=60 ; true=1;}
+ '3h'   = {typeOfStatisticalProcessing=1; true=is_one_of(productDefinitionTemplateNumber, 6, 10); indicatorOfUnitForTimeRange=0; lengthOfTimeRange=180; true=1;}
+ '6h'   = {typeOfStatisticalProcessing=1; true=is_one_of(productDefinitionTemplateNumber, 6, 10); indicatorOfUnitForTimeRange=0; lengthOfTimeRange=360; true=1;}
+ '12h'  = {typeOfStatisticalProcessing=1; true=is_one_of(productDefinitionTemplateNumber, 6, 10); indicatorOfUnitForTimeRange=0; lengthOfTimeRange=720; true=1;}
 
+# all relevant time spans based on minutes
+ 'none' = {indicatorOfUnitForTimeRange=0; lengthOfTimeRange = 0;  }  # arguably, could also be some other value such as '0'
+ '10m'  = {indicatorOfUnitForTimeRange=0; lengthOfTimeRange = 10; }
+ '15m'  = {indicatorOfUnitForTimeRange=0; lengthOfTimeRange = 15; }
+ '20m'  = {indicatorOfUnitForTimeRange=0; lengthOfTimeRange = 20; }
+ '30m'  = {indicatorOfUnitForTimeRange=0; lengthOfTimeRange = 30; }
+ '1h'   = {indicatorOfUnitForTimeRange=0; lengthOfTimeRange = 60; }
+ '3h'   = {indicatorOfUnitForTimeRange=0; lengthOfTimeRange = 180;}
+ '6h'   = {indicatorOfUnitForTimeRange=0; lengthOfTimeRange = 360;}
+ '12h'  = {indicatorOfUnitForTimeRange=0; lengthOfTimeRange = 720;}
+
+# catch everything else
+ 'none' = {true=1;}
