@@ -121,7 +121,7 @@ concept marsType(unknown) {
     es = {
       productDefinitionTemplateNumber = 2;
       derivedForecast = 4;}
-    # ensemble estatistics
+    # ensemble statistics (percentile)
     est = {
       productDefinitionTemplateNumber = 6;
     }
