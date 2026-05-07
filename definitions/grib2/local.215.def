@@ -2,7 +2,7 @@
 include "grib2/local.78.def"
 
 # ATTENTION: KENDA-1 is not fully supported; the coding of KENDA-CH1 needs to be revised, before
-#            it can be fully supported  
+#            it can be fully supported
 #------------------------------------------------------------------------------------
 # class
 # ... operational data
@@ -44,7 +44,7 @@ concept marsStream(unknown) {
       typeOfGeneratingProcess = 4;
       generatingProcessIdentifier = 142;
     }
-    
+
     reanl = {
       generatingProcessIdentifier = 170;
     }
@@ -64,11 +64,11 @@ concept marsType(unknown) {
     fc = {
       productDefinitionTemplateNumber = 8;}
     # ... temporal accumulation, chemical constituent
-    #     COSMO and ICON define a unique parameter id for each combination of 
+    #     COSMO and ICON define a unique parameter id for each combination of
     #     (discipline, parameterCategory, parameterNumber), and chemical constituent
     fc = {
       productDefinitionTemplateNumber = 42;}
-    
+
     an = {
       typeOfGeneratingProcess = 0;
       backgroundProcess = 2;
@@ -77,8 +77,8 @@ concept marsType(unknown) {
       typeOfGeneratingProcess = 2;
       backgroundProcess = 0;
     }
-    
-    # ensemble forecast or assimilation product, perturbed or control member 
+
+    # ensemble forecast or assimilation product, perturbed or control member
     # (a new type could be used for each productDefinitionTemplateNumber)
     # ... instantaneous value
     cf = {
@@ -90,7 +90,7 @@ concept marsType(unknown) {
     # ... instantaneous value, chemical constituent
     cf = {
       productDefinitionTemplateNumber = 41;
-      perturbationNumber = 0; 
+      perturbationNumber = 0;
     }
     pf = {
       productDefinitionTemplateNumber = 41;
@@ -98,7 +98,7 @@ concept marsType(unknown) {
     # ... temporal accumulation
     cf = {
       productDefinitionTemplateNumber = 11;
-      perturbationNumber = 0; 
+      perturbationNumber = 0;
     }
     pf = {
       productDefinitionTemplateNumber = 11;
@@ -106,7 +106,7 @@ concept marsType(unknown) {
     # ... temporal accumulation, chemical constituent
     cf = {
       productDefinitionTemplateNumber = 43;
-      perturbationNumber = 0; 
+      perturbationNumber = 0;
     }
     pf = {
       productDefinitionTemplateNumber = 43;
@@ -121,6 +121,16 @@ concept marsType(unknown) {
     es = {
       productDefinitionTemplateNumber = 2;
       derivedForecast = 4;}
+    # ensemble statistics (percentile)
+    est = {
+      productDefinitionTemplateNumber = 6;
+    }
+    est = {
+      productDefinitionTemplateNumber = 10;
+    }
+    ssd = {
+      productDefinitionTemplateNumber = 33;
+    }
 } : no_copy;
 
 concept marsModel(unknown) {
@@ -197,4 +207,3 @@ alias mars.stream = marsStream;
 alias mars.type = marsType;
 alias mars.model = marsModel;
 alias mars.expver = marsExpver;
-
