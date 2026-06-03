@@ -1,2 +1,2 @@
 # eccodes-cosmo-mars
-mars definitions for cosmo operational data at MeteoSwiss
+MARS definitions for operational ICON data at MeteoSwiss.
