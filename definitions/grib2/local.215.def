@@ -19,36 +19,57 @@ concept marsClass(unknown) {
   'rd' = {
     generatingProcessIdentifier = 170;
   }
+  # VARDA-SINGLE: research data when localNumberOfExperiment=900, operational otherwise
+  'rd' = {
+    localNumberOfExperiment = 0;
+    generatingProcessIdentifier = 180;
+  }
+  'ai' = {
+    generatingProcessIdentifier = 180;
+  }
 } : no_copy;
 
 concept marsStream(unknown) {
+    reanl = {
+      generatingProcessIdentifier = 170;
+    }
+
     # Ensemble data assimilation system
     # ... uninitialized analysis
     enda = {
       typeOfGeneratingProcess = 0;
-      backgroundProcess = 2;}
+      backgroundProcess = 2;
+      generatingProcessIdentifier = 121;
+    }
     # fg
     enda = {
       typeOfGeneratingProcess = 2;
       backgroundProcess = 0;
+      generatingProcessIdentifier = 121; 
     }
+    oper = {
+      productDefinitionTemplateNumber = 0;
+      # Forecast
+      typeOfProcessedData = 1; 
+    }
+    oper = {
+      productDefinitionTemplateNumber = 8;
+      # Forecast
+      typeOfProcessedData = 1; 
+    }
+
     # ... analysis increment (to be defined)
     # ... initialized analysis (to be defined)
     # ... first guess det (to be defined)
     # ensemble forecast
     enfo = {
       typeOfGeneratingProcess = 4;
-      generatingProcessIdentifier = 141;
+      productDefinitionTemplateNumber  = 1;
     }
     enfo = {
       typeOfGeneratingProcess = 4;
-      generatingProcessIdentifier = 142;
+      productDefinitionTemplateNumber  = 11;
     }
-
-    reanl = {
-      generatingProcessIdentifier = 170;
-    }
-
 } : no_copy;
 
 concept marsType(unknown) {
@@ -73,6 +94,7 @@ concept marsType(unknown) {
       typeOfGeneratingProcess = 0;
       backgroundProcess = 2;
     }
+
     fg = {
       typeOfGeneratingProcess = 2;
       backgroundProcess = 0;
@@ -167,7 +189,22 @@ concept marsModel(unknown) {
     'ICON-REA-L-CH1' = {
       generatingProcessIdentifier = 170;}
     'VARDA-SINGLE' = {
-      generatingProcessIdentifier = 180;}
+      generatingProcessIdentifier = 180;
+      productDefinitionTemplateNumber = 0;
+    }
+    'VARDA-SINGLE' = {
+      generatingProcessIdentifier = 180;
+      productDefinitionTemplateNumber = 8;
+    }
+    'VARDA-ENS' = {
+      generatingProcessIdentifier = 180;
+      productDefinitionTemplateNumber = 1;
+    }
+    'VARDA-ENS' = {
+      generatingProcessIdentifier = 180;
+      productDefinitionTemplateNumber = 11;
+    }
+
 } : no_copy;
 
 
