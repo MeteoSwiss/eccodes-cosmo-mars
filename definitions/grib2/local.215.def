@@ -75,15 +75,21 @@ concept marsStream(unknown) {
 concept marsType(unknown) {
     # deterministic forecast or assimilation product
     # # (a new type could be used for each productDefinitionTemplateNumber)
-    # ... instantaneous value
+    # ... instantaneous value (deterministic: TOGP=2, backgroundProcess=0)
+    # These rules have 3 keys so they beat the generic fg rule (2 keys) in
+    # eccodes concept matching (most-specific wins).
     fc = {
-      productDefinitionTemplateNumber = 0;}
+      productDefinitionTemplateNumber = 0;
+      typeOfGeneratingProcess = 2;
+      backgroundProcess = 0;}
     # ... instantaneous value, chemical constituent
     fc = {
       productDefinitionTemplateNumber = 40;}
-    # ... temporal accumulation
+    # ... temporal accumulation (deterministic)
     fc = {
-      productDefinitionTemplateNumber = 8;}
+      productDefinitionTemplateNumber = 8;
+      typeOfGeneratingProcess = 2;
+      backgroundProcess = 0;}
     # ... temporal accumulation, chemical constituent
     #     COSMO and ICON define a unique parameter id for each combination of
     #     (discipline, parameterCategory, parameterNumber), and chemical constituent
