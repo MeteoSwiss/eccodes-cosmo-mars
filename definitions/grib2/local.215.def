@@ -81,10 +81,14 @@ concept marsType(unknown) {
     fc = {
       productDefinitionTemplateNumber = 0;
       typeOfGeneratingProcess = 2;
-      backgroundProcess = 0;}
+      backgroundProcess = 0;
+    }
     # ... instantaneous value, chemical constituent
     fc = {
-      productDefinitionTemplateNumber = 40;}
+      productDefinitionTemplateNumber = 40;
+      typeOfGeneratingProcess = 2;
+      backgroundProcess = 0;
+    }
     # ... temporal accumulation (deterministic)
     fc = {
       productDefinitionTemplateNumber = 8;
@@ -94,7 +98,10 @@ concept marsType(unknown) {
     #     COSMO and ICON define a unique parameter id for each combination of
     #     (discipline, parameterCategory, parameterNumber), and chemical constituent
     fc = {
-      productDefinitionTemplateNumber = 42;}
+      productDefinitionTemplateNumber = 42;
+      typeOfGeneratingProcess = 2;
+      backgroundProcess = 0;
+    }
 
     an = {
       typeOfGeneratingProcess = 0;
