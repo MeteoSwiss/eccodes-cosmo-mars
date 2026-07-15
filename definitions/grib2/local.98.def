@@ -53,7 +53,7 @@ if (  ( extraLocalSectionPresent || addExtraLocalSection )  && ! deleteExtraLoca
 # this concept the key is absent for IFS GRIB and FDB raises a "Serious bug:
 # Could not find [model]" error.
 concept marsModel(unknown) {
-    'VARDA-SINGLE' = {
+    'VARDA-SINGLE-G' = {
       generatingProcessIdentifier = 180;
     }
 } : no_copy;

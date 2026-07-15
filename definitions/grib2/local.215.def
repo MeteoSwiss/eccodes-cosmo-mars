@@ -19,7 +19,7 @@ concept marsClass(unknown) {
   'rd' = {
     generatingProcessIdentifier = 170;
   }
-  # VARDA-SINGLE: research data when localNumberOfExperiment=900, operational otherwise
+  # VARDA-SINGLE: research data when localNumberOfExperiment=0, operational otherwise
   'rd' = {
     localNumberOfExperiment = 0;
     generatingProcessIdentifier = 180;
