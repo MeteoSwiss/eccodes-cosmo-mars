@@ -19,60 +19,125 @@ concept marsClass(unknown) {
   'rd' = {
     generatingProcessIdentifier = 170;
   }
+  # VARDA-SINGLE: research data when localNumberOfExperiment=0, operational otherwise
+  'rd' = {
+    localNumberOfExperiment = 0;
+    generatingProcessIdentifier = 180;
+  }
+  'ai' = {
+    generatingProcessIdentifier = 180;
+  }
 } : no_copy;
 
 concept marsStream(unknown) {
+    reanl = {
+      generatingProcessIdentifier = 170;
+      typeOfGeneratingProcess = 4;
+    }
+
     # Ensemble data assimilation system
     # ... uninitialized analysis
     enda = {
       typeOfGeneratingProcess = 0;
-      backgroundProcess = 2;}
+      backgroundProcess = 2;
+      generatingProcessIdentifier = 121;
+    }
     # fg
     enda = {
       typeOfGeneratingProcess = 2;
       backgroundProcess = 0;
+      generatingProcessIdentifier = 121; 
     }
-    # ... analysis increment (to be defined)
-    # ... initialized analysis (to be defined)
-    # ... first guess det (to be defined)
-    # ensemble forecast
-    enfo = {
-      typeOfGeneratingProcess = 4;
-      generatingProcessIdentifier = 141;
+    oper = {
+      productDefinitionTemplateNumber = 0;
+      # Forecast
+      typeOfProcessedData = 1; 
     }
-    enfo = {
-      typeOfGeneratingProcess = 4;
-      generatingProcessIdentifier = 142;
-    }
-
-    reanl = {
-      generatingProcessIdentifier = 170;
+    oper = {
+      productDefinitionTemplateNumber = 8;
+      # Forecast
+      typeOfProcessedData = 1; 
     }
 
+# ensemble forecast
+    enfo = {
+      typeOfGeneratingProcess = 4;
+      productDefinitionTemplateNumber = 1;
+    }
+    enfo = {
+      typeOfGeneratingProcess = 4;
+      productDefinitionTemplateNumber = 11;
+    }
+    # ... derived products (mean, spread, ...), point-in-time / accumulation
+    enfo = {
+      typeOfGeneratingProcess = 4;
+      productDefinitionTemplateNumber = 2;
+    }
+    enfo = {
+      typeOfGeneratingProcess = 4;
+      productDefinitionTemplateNumber = 12;
+    }
+    # ... percentile forecasts, point-in-time / accumulation
+    enfo = {
+      typeOfGeneratingProcess = 4;
+      productDefinitionTemplateNumber = 6;
+    }
+    enfo = {
+      typeOfGeneratingProcess = 4;
+      productDefinitionTemplateNumber = 10;
+    }
+    # ... synthetic satellite members
+    enfo = {
+      typeOfGeneratingProcess = 4;
+      productDefinitionTemplateNumber = 33;
+    }
+    # ... chemical constituent members, point-in-time / accumulation
+    enfo = {
+      typeOfGeneratingProcess = 4;
+      productDefinitionTemplateNumber = 41;
+    }
+    enfo = {
+      typeOfGeneratingProcess = 4;
+      productDefinitionTemplateNumber = 43;
+    }
 } : no_copy;
 
 concept marsType(unknown) {
     # deterministic forecast or assimilation product
     # # (a new type could be used for each productDefinitionTemplateNumber)
-    # ... instantaneous value
+    # ... instantaneous value (deterministic: TOGP=2, backgroundProcess=0)
+    # These rules have 3 keys so they beat the generic fg rule (2 keys) in
+    # eccodes concept matching (most-specific wins).
     fc = {
-      productDefinitionTemplateNumber = 0;}
+      productDefinitionTemplateNumber = 0;
+      typeOfGeneratingProcess = 2;
+      backgroundProcess = 0;
+    }
     # ... instantaneous value, chemical constituent
     fc = {
-      productDefinitionTemplateNumber = 40;}
-    # ... temporal accumulation
+      productDefinitionTemplateNumber = 40;
+      typeOfGeneratingProcess = 2;
+      backgroundProcess = 0;
+    }
+    # ... temporal accumulation (deterministic)
     fc = {
-      productDefinitionTemplateNumber = 8;}
+      productDefinitionTemplateNumber = 8;
+      typeOfGeneratingProcess = 2;
+      backgroundProcess = 0;}
     # ... temporal accumulation, chemical constituent
     #     COSMO and ICON define a unique parameter id for each combination of
     #     (discipline, parameterCategory, parameterNumber), and chemical constituent
     fc = {
-      productDefinitionTemplateNumber = 42;}
+      productDefinitionTemplateNumber = 42;
+      typeOfGeneratingProcess = 2;
+      backgroundProcess = 0;
+    }
 
     an = {
       typeOfGeneratingProcess = 0;
       backgroundProcess = 2;
     }
+
     fg = {
       typeOfGeneratingProcess = 2;
       backgroundProcess = 0;
@@ -167,7 +232,22 @@ concept marsModel(unknown) {
     'ICON-REA-L-CH1' = {
       generatingProcessIdentifier = 170;}
     'VARDA-SINGLE' = {
-      generatingProcessIdentifier = 180;}
+      generatingProcessIdentifier = 180;
+      productDefinitionTemplateNumber = 0;
+    }
+    'VARDA-SINGLE' = {
+      generatingProcessIdentifier = 180;
+      productDefinitionTemplateNumber = 8;
+    }
+    'VARDA-ENS' = {
+      generatingProcessIdentifier = 180;
+      productDefinitionTemplateNumber = 1;
+    }
+    'VARDA-ENS' = {
+      generatingProcessIdentifier = 180;
+      productDefinitionTemplateNumber = 11;
+    }
+
 } : no_copy;
 
 

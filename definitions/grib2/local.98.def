@@ -1,0 +1,66 @@
+# local section ECMWF — MeteoSwiss extended version
+#
+# This file overrides grib2/local.98.def to add VARDA-SINGLE (GPI=180) MARS
+# namespace support for IFS/ECMWF-format GRIB files.  It is placed in the
+# eccodes-cosmo-mars definitions directory, which is prepended to
+# ECCODES_DEFINITION_PATH so that it takes priority over the system copy.
+#
+# The body below is a verbatim copy of the upstream grib2/local.98.def followed
+# by MeteoSwiss additions.  A direct `include` cannot be used because that would
+# create a circular reference.
+
+template mars_labeling "grib2/mars_labeling.def";
+transient productDefinitionTemplateNumberInternal=-1;
+
+meta localDefinitionNumber local_definition(grib2LocalSectionNumber,
+                                            productDefinitionTemplateNumber,
+                                            productDefinitionTemplateNumberInternal,
+                                            type,
+                                            stream,
+                                            class,
+                                            eps,
+                                            stepType,
+                                            derivedForecast);
+
+meta eps g2_eps(productDefinitionTemplateNumber,
+                type,
+                stream,
+                stepType,
+                derivedForecast);
+
+template_nofail  localSection  "grib2/local.98.[grib2LocalSectionNumber:l].def";
+position offsetAfterLocalSection;
+transient addExtraLocalSection=0;
+transient deleteExtraLocalSection=0;
+meta extraLocalSectionPresent evaluate (section2Length - offsetAfterLocalSection + offsetSection2 > 0 );
+if (  ( extraLocalSectionPresent || addExtraLocalSection )  && ! deleteExtraLocalSection) {
+    # extra local section present
+    codetable[2] extraLocalSectionNumber 'grib2/grib2LocalSectionNumber.[centreForLocal:l].table' = 300 : dump;
+    template  localSection  "grib2/local.98.[extraLocalSectionNumber:l].def";
+}
+
+#------------------------------------------------------------------------------------
+# MeteoSwiss additions: VARDA-SINGLE (generatingProcessIdentifier=180) support
+# for IFS/ECMWF-format (centre=98) GRIB files.
+#
+# These concepts add mars.model and override mars.stream so that VARDA-SINGLE
+# global-grid output is stored consistently with ICON-grid output under the same
+# FDB stream/model keys.
+#------------------------------------------------------------------------------------
+
+# marsModel: maps GPI=180 to 'VARDA-SINGLE'.
+# The FDB realtime.schema requires the 'model' key in the MARS namespace; without
+# this concept the key is absent for IFS GRIB and FDB raises a "Serious bug:
+# Could not find [model]" error.
+concept marsModel(unknown) {
+    'VARDA-SINGLE-G' = {
+      generatingProcessIdentifier = 180;
+    }
+} : no_copy;
+
+alias mars.model = marsModel;
+
+# marsStream: The native marsStream codetable key is set to 'enfo' directly in
+# the GRIB encoding (output config), so g2_mars_labeling correctly computes
+# stream='enfo'.  Redefining marsStream as a concept here would conflict with
+# the codetable key expected by g2_mars_labeling in some eccodes builds.
