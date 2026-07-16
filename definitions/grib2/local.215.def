@@ -59,17 +59,46 @@ concept marsStream(unknown) {
       typeOfProcessedData = 1; 
     }
 
-    # ... analysis increment (to be defined)
-    # ... initialized analysis (to be defined)
-    # ... first guess det (to be defined)
-    # ensemble forecast
+# ensemble forecast
     enfo = {
       typeOfGeneratingProcess = 4;
-      productDefinitionTemplateNumber  = 1;
+      productDefinitionTemplateNumber = 1;
     }
     enfo = {
       typeOfGeneratingProcess = 4;
-      productDefinitionTemplateNumber  = 11;
+      productDefinitionTemplateNumber = 11;
+    }
+    # ... derived products (mean, spread, ...), point-in-time / accumulation
+    enfo = {
+      typeOfGeneratingProcess = 4;
+      productDefinitionTemplateNumber = 2;
+    }
+    enfo = {
+      typeOfGeneratingProcess = 4;
+      productDefinitionTemplateNumber = 12;
+    }
+    # ... percentile forecasts, point-in-time / accumulation
+    enfo = {
+      typeOfGeneratingProcess = 4;
+      productDefinitionTemplateNumber = 6;
+    }
+    enfo = {
+      typeOfGeneratingProcess = 4;
+      productDefinitionTemplateNumber = 10;
+    }
+    # ... synthetic satellite members
+    enfo = {
+      typeOfGeneratingProcess = 4;
+      productDefinitionTemplateNumber = 33;
+    }
+    # ... chemical constituent members, point-in-time / accumulation
+    enfo = {
+      typeOfGeneratingProcess = 4;
+      productDefinitionTemplateNumber = 41;
+    }
+    enfo = {
+      typeOfGeneratingProcess = 4;
+      productDefinitionTemplateNumber = 43;
     }
 } : no_copy;
 
