@@ -96,7 +96,7 @@
 #atmosphere
 'sfc' = {typeOfFirstFixedSurface=10;   typeOfSecondFixedSurface=255;}
 #echoTopInDBZ
-'thr' = {typeOfFirstFixedSurface=25;   typeOfSecondFixedSurface=255;}
+'rfl' = {typeOfFirstFixedSurface=25;   typeOfSecondFixedSurface=255;}
 # WSHEAR_DIFF_
 'hmsl'  = {typeOfFirstFixedSurface=102; typeOfSecondFixedSurface=102;}
 'sfc' = {typeOfFirstFixedSurface=208;   typeOfSecondFixedSurface=208;}
