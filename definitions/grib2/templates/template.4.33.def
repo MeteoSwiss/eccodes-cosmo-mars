@@ -1,4 +1,4 @@
-#modified by MCH!
+# modified by MCH! See comments below
 # (C) Copyright 2005- ECMWF.
 
 # TEMPLATE 4.33, Individual ensemble forecast, control and perturbed, at a horizontal level or in a horizontal layer at a point in time for simulated (synthetic) satellite data
@@ -12,5 +12,6 @@ include "grib2/templates/template.4.eps.def"
 
 # MCH: mars.levtype is defined in template.4.horizontal.def, which PDT 33 does not include
 # (no fixed-surface octets). Define it here so rules in marsLevtypeConcept.def work for PDT 33
+# This is needed to provide a mars levtype (required in our FDB schema).
 meta marsLevtypeFilename   g2_param_concept_filename("marsLevtypeConcept",   MTG2Switch, tablesVersionMTG2Switch): hidden;
 concept mars.levtype(unknown,marsLevtypeFilename,conceptsDir2,conceptsDir1):no_copy, read_only;
