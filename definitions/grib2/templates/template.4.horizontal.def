@@ -110,7 +110,7 @@ if( (typeOfFirstFixedSurface == 151 && typeOfSecondFixedSurface == 151) ||
 
 # MCH: for hmsl layers (e.g. WSHEAR_DIFF), also add bottomLevel to mars
 if (typeOfFirstFixedSurface == 102 && typeOfSecondFixedSurface == 102) {
-    alias mars.bottomLevel = bottomLevel;
+    alias mars.bottomlevel = bottomLevel;
 }
 
 alias ls.typeOfLevel=typeOfLevel;
