@@ -96,6 +96,7 @@
 #atmosphere
 'sfc' = {typeOfFirstFixedSurface=10;   typeOfSecondFixedSurface=255;}
 #echoTopInDBZ
+# 'rfl' stands for reflectivity
 'rfl' = {typeOfFirstFixedSurface=25;   typeOfSecondFixedSurface=255;}
 # WSHEAR_DIFF_
 'hmsl'  = {typeOfFirstFixedSurface=102; typeOfSecondFixedSurface=102;}
