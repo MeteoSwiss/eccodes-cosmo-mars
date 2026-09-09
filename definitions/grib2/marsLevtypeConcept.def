@@ -96,11 +96,14 @@
 #atmosphere
 'sfc' = {typeOfFirstFixedSurface=10;   typeOfSecondFixedSurface=255;}
 #echoTopInDBZ
-'sfc' = {typeOfFirstFixedSurface=25;   typeOfSecondFixedSurface=255;}
+# 'rfl' stands for reflectivity
+'rfl' = {typeOfFirstFixedSurface=25;   typeOfSecondFixedSurface=255;}
 # WSHEAR_DIFF_
-'hl'  = {typeOfFirstFixedSurface=102; typeOfSecondFixedSurface=102;}
+'hmsl'  = {typeOfFirstFixedSurface=102; typeOfSecondFixedSurface=102;}
 'sfc' = {typeOfFirstFixedSurface=208;   typeOfSecondFixedSurface=208;}
 # needed by ASWDIFU_S_OS, ... 
 'sfc'  = {typeOfFirstFixedSurface=208; typeOfSecondFixedSurface=255;}
 # HHL
 'ml'  = {typeOfFirstFixedSurface=7; typeOfSecondFixedSurface=101;}
+# SYNMSG_BT_CL_IR10.8: PDT 33 needs extra logic in template.4.33.def for a levtype
+'sfc' = {paramId=500340;}
