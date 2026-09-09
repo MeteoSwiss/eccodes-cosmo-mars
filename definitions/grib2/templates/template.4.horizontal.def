@@ -1,4 +1,3 @@
-# modified by DWD and MCH! See comments below
 # (C) Copyright 2005- ECMWF.
 
 #  Type of first fixed surface
@@ -106,11 +105,6 @@ if( (typeOfFirstFixedSurface == 151 && typeOfSecondFixedSurface == 151) ||
     alias mars.levelist = bottomLevel;
     alias ls.level = bottomLevel;
     alias vertical.level = bottomLevel;
-}
-
-# MCH: for hmsl layers (e.g. WSHEAR_DIFF), also add bottomLevel to mars
-if (typeOfFirstFixedSurface == 102 && typeOfSecondFixedSurface == 102) {
-    alias mars.bottomLevel = bottomLevel;
 }
 
 alias ls.typeOfLevel=typeOfLevel;
