@@ -96,9 +96,10 @@
 #atmosphere
 'sfc' = {typeOfFirstFixedSurface=10;   typeOfSecondFixedSurface=255;}
 #echoTopInDBZ
-'sfc' = {typeOfFirstFixedSurface=25;   typeOfSecondFixedSurface=255;}
+# 'rfl' stands for reflectivity
+'rfl' = {typeOfFirstFixedSurface=25;   typeOfSecondFixedSurface=255;}
 # WSHEAR_DIFF_
-'hl'  = {typeOfFirstFixedSurface=102; typeOfSecondFixedSurface=102;}
+'hmsl'  = {typeOfFirstFixedSurface=102; typeOfSecondFixedSurface=102;}
 'sfc' = {typeOfFirstFixedSurface=208;   typeOfSecondFixedSurface=208;}
 # needed by ASWDIFU_S_OS, ... 
 'sfc'  = {typeOfFirstFixedSurface=208; typeOfSecondFixedSurface=255;}
