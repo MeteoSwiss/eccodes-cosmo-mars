@@ -282,8 +282,20 @@ concept marsExpver(unknown) {
   }
 } : no_copy;
 
+concept gridName(unknown) {
+  'ch1' = {
+    gridType = 0; #unstructured
+    uuidOfHGrid = '17643da2574959b644d254a3cd6e2bc0';
+  }
+  'ch1' = {
+    gridType = 0; #unstructured
+    uuidOfHGrid = 'bbbd5a09-8554-9924-3c7a-4aa4c8762920';
+  }
+}
+
 alias mars.class = marsClass;
 alias mars.stream = marsStream;
 alias mars.type = marsType;
 alias mars.model = marsModel;
 alias mars.expver = marsExpver;
+alias mars.gridName = gridName;
