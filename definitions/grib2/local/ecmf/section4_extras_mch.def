@@ -1,0 +1,19 @@
+# MeteoSwiss additions to grib2/local/ecmf/section4_extras.def
+
+# Expose mars.timespan for ecmf-produced messages too, independent of ECMWF's
+# own MTG2Switch encoding-migration flag (which gates the stock mars.timespan
+# alias in grib2/section.4.def and resolves to 0 for our ifs-sourced templates,
+# since their tablesVersion=19 predates ECMWF's own MTG2 cutoff at 33).
+concept timeSpanMch (unknown,"timespanConcept.def",conceptsDir2,conceptsDir1) : read_only;
+if (timeSpanMch is "fromstart") {
+   constant timeSpanMchFs = "fs";
+   alias mars.timespan = timeSpanMchFs;
+} else {
+   if (timeSpanMch isnot "unknown") {
+      alias mars.timespan = timeSpanMch;
+   }
+}
+
+# gridName already resolves natively for Gaussian grids (gaussian_grid_name()
+# in grib2/templates/template.3.gaussian.def) -- just expose it under mars.
+alias mars.gridName = gridName;

@@ -1,0 +1,16 @@
+# Override this file to add your own additional definitions. In Zeile 37 und 38 die neue ecCodes-Version eintragen.
+# e.g., check for ecCodes library version compatibility
+
+meta ecmwfLibraryVersion library_version() : string_type, hidden, read_only;
+
+constant edzwDefinitionFilesVersion = '2.47.0' ;
+
+version_check_off = getenv("ECCODES_VERSION_CHECK_OFF","0") ;
+
+if (version_check_off == 0) {
+  if (!(ecmwfLibraryVersion is edzwDefinitionFilesVersion)) {
+    print("/dev/stderr") "WARNING: definitions.edzw version [edzwDefinitionFilesVersion] is NOT compatible with ecCodes library version [ecmwfLibraryVersion]!" ;
+  }
+}
+
+template_nofail mchSection4ExtrasEcmf "grib2/local/[centre]/section4_extras_mch.def";
