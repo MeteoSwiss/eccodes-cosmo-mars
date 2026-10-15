@@ -299,3 +299,4 @@ alias mars.type = marsType;
 alias mars.model = marsModel;
 alias mars.expver = marsExpver;
 alias mars.gridName = gridName;
+alias mars.timeSpan = timeSpan;
